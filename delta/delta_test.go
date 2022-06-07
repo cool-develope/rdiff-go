@@ -20,15 +20,15 @@ var golden = []struct {
 	out        string
 	windowSize uint32
 }{
-	// {"ab", "abc", 2},
-	// {"abcabc", "abceabc", 3},
-	// {"abcdef", "abde", 1},
-	// {"abcabc", "acabc", 2},
-	// {"abcabcabcabcabcabc", "abcabcxabcabc", 3},
-	// {"abcabcabcabcabcabc", "abcabcxabcdefabc", 2},
-	// {strings.Repeat("a", 1e5), strings.Repeat("a", 1e5) + "x", 64},
-	// {strings.Repeat("a", 1e5), "x" + strings.Repeat("a", 1e5), 64},
-	// {strings.Repeat("a", 2e3), strings.Repeat("a", 1e3) + "x" + strings.Repeat("a", 1e3), 64},
+	{"ab", "abc", 2},
+	{"abcabc", "abceabc", 3},
+	{"abcdef", "abde", 1},
+	{"abcabc", "acabc", 2},
+	{"abcabcabcabcabcabc", "abcabcxabcabc", 3},
+	{"abcabcabcabcabcabc", "abcabcxabcdefabc", 2},
+	{strings.Repeat("a", 1e5), strings.Repeat("a", 1e5) + "x", 64},
+	{strings.Repeat("a", 1e5), "x" + strings.Repeat("a", 1e5), 64},
+	{strings.Repeat("a", 2e3), strings.Repeat("a", 1e3) + "x" + strings.Repeat("a", 1e3), 64},
 }
 
 func patch(origin string, deltas []Delta, windowSize uint32) string {
